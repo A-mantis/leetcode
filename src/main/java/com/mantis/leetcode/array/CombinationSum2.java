@@ -20,14 +20,12 @@ public class CombinationSum2 {
 
     private void backtracking(List<Integer> tempCombination, List<List<Integer>> combinations,
                               boolean[] hasVisited, int start, int target, final int[] candidates) {
-
         if (target == 0) {
             combinations.add(new ArrayList<Integer>(tempCombination));
             return;
         }
         for (int i = start; i < candidates.length; i++) {
-            if (i != 0 && candidates[i] == candidates[i - 1] && !hasVisited[i - 1]
-            ) {
+            if (i != 0 && candidates[i] == candidates[i - 1] && !hasVisited[i - 1]) {
                 continue;
             }
             if (candidates[i] <= target) {
@@ -43,6 +41,6 @@ public class CombinationSum2 {
     public static void main(String[] args) {
         int[] arr = {1, 1, 6, 1};
         CombinationSum2 combinationSum2 = new CombinationSum2();
-        System.out.println(combinationSum2.combinationSum2(arr, 8));
+        System.out.println(combinationSum2.combinationSum2(arr, 7));
     }
 }
